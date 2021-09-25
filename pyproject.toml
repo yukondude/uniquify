@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "uniquify"
+version = "0.1.0"
+description = "Migrate unique files from one path to a new path root."
+authors = ["Dave Rogers <thedude@yukondude.com>"]
+license = "GPL-3.0-only"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
