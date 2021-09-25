@@ -6,6 +6,7 @@
 # Refer to the attached LICENSE file or see <http://www.gnu.org/licenses/> for details.
 
 import click
+from .uniquify import uniquify
 
 
 @click.command(context_settings=dict(help_option_names=["-h", "--help"]))
@@ -15,11 +16,11 @@ import click
     default="shortest",
     show_default=True,
     type=click.Choice(
-        ["first", "shortest", "youngest", "oldest"], case_sensitive=False
+        ["alpha", "first", "shortest", "youngest", "oldest"], case_sensitive=False
     ),
     help="When there are multiple identical files, choose one as the canonical file:"
-    "first encountered, shortest path, most recently modified, oldest modification "
-    "time",
+    "alphabetically first filename, first encountered, shortest path, most recently "
+    "modified, or oldest modification time. The first encountered decides a tie.",
 )
 @click.option(
     "-l",
@@ -53,4 +54,4 @@ import click
 def main(**kwargs):
     """Migrate unique files from one or more source paths to a new target path root. The
     target path must be an empty directory."""
-    print(kwargs)
+    uniquify(kwargs["sourcepath"])
