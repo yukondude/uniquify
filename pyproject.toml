@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "uniquify"
 version = "0.1.0"
-description = "Migrate unique files from one or more paths to a new path root."
+description = "Migrate unique files from one or more source paths to a new target path root."
 authors = ["Dave Rogers <thedude@yukondude.com>"]
 license = "GPL-3.0-only"
 
